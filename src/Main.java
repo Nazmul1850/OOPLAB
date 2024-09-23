@@ -1,6 +1,4 @@
-import Array.Queue;
-import Array.Stack;
-import Array.SumAvg;
+import Array.MulDMatrix;
 
 import java.util.Scanner;
 
@@ -9,21 +7,30 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the size of the Queue: ");
-        int m = sc.nextInt();
-        Queue q = new Queue(m);
-        while(true){
-            System.out.println("Enter 1 for Enqueue 2 for Dequeue 3 for peek 4 to quit");
-            int choice = sc.nextInt();
-            if(choice == 1){
-                q.enqueue(sc.nextInt());
-            }else if(choice == 2){
-                System.out.println(q.dequeue());
-            } else if (choice == 3) {
-                System.out.println(q.peek());
-            } else if (choice == 4) {
-                break;
+        System.out.println("Enter the size of the matrix1 ");
+        int r = sc.nextInt();
+        int c = sc.nextInt();
+        MulDMatrix mat1 = new MulDMatrix(r, c);
+        MulDMatrix mat2;
+        int[][] matrix = new int[r][c];
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                matrix[i][j] = sc.nextInt();
             }
         }
+        mat1.updateMatrix(matrix);
+        mat1.printTranspose();
+//        System.out.println("Give another Matrix");
+//        int[][] matrix1 = new int[r][c];
+//        for (int i = 0; i < r; i++) {
+//            for (int j = 0; j < c; j++) {
+//                matrix1[i][j] = sc.nextInt();
+//            }
+//        }
+//        mat2.updateMatrix(matrix1);
+//        mat1.printMatrix();
+//        mat2.printMatrix();
+//        MulDMatrix mat3 = mat1.getSumMatrix(mat2);
+//        mat3.printMatrix();
     }
 }
