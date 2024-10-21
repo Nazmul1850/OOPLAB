@@ -1,6 +1,6 @@
 package Inheritance.TDObject;
 
-public class ThreeDObject {
+abstract class ThreeDObject {
 
     private String name;
     public ThreeDObject() {
@@ -9,10 +9,7 @@ public class ThreeDObject {
     public ThreeDObject(String name) {
         this.name = name;
     }
-    public double wholeSurfaceArea() {
-        System.out.println("Parent Method WSArea");
-        return 0;
-    }
+    abstract double wholeSurfaceArea();
     public double area(){
         System.out.println("Parent Method Area");
         return 0;
